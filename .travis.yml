@@ -6,6 +6,9 @@ cache: npm
 branches:
   only:
     - main # build master branch only
+before_script: ## 根据你所用的主题和自定义的不同，这里会有所不同
+  - npm install -g hexo-cli # 在 CI 环境内安装 Hexo
+  - npm install # 在根目录安装站点需要的依赖
 script:
   - hexo generate # generate static files
 deploy:
