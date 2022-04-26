@@ -1,21 +1,23 @@
 sudo: false
+dist: xenial #指定ubuntu发行版Ubuntu Xenial 16.04（默认）
 language: node_js
 node_js:
-  - 14 # use nodejs v10 LTS
+  - 14 # use nodejs v14 LTS
 cache: npm
 branches:
   only:
     - main # build master branch only
-before_script: ## 根据你所用的主题和自定义的不同，这里会有所不同
+install: ## 根据你所用的主题和自定义的不同，这里会有所不同
   - npm install -g hexo-cli # 在 CI 环境内安装 Hexo
   - npm install # 在根目录安装站点需要的依赖
 script:
   - hexo generate # generate static files
 deploy:
   provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  keep_history: true
   on:
     branch: main
-  local-dir: public
+  local_dir: public
+  target_branch: gh-pages
