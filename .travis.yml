@@ -3,20 +3,20 @@ dist: xenial #指定ubuntu发行版Ubuntu Xenial 16.04（默认）
 language: node_js
 node_js:
   - 14 # use nodejs v14 LTS
-cache: npm
+cache: npm #缓存node_modules文件，默认是开启的
 branches:
   only:
     - main # build master branch only
-install: ## 根据你所用的主题和自定义的不同，这里会有所不同
+install: # 安装依赖阶段，默认是npm install
   - npm install -g hexo-cli # 在 CI 环境内安装 Hexo
   - npm install # 在根目录安装站点需要的依赖
-script:
+script: #build阶段
   - hexo generate # generate static files
 deploy:
-  provider: pages
+  provider: pages #使用github-pages的发布工具来发布，默认提交到gh-pages分支
   skip_cleanup: true
   github_token: $GH_TOKEN
-  keep_history: true
+  keep_history: true #不覆盖提交历史，即不使用git push --force
   on:
     branch: main
   local_dir: public
