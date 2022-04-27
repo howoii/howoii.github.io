@@ -4,6 +4,7 @@
 
 简介：
 > 本博客使用 [Hexo](https://hexo.io/zh-cn/) 框架搭建，使用了 [maupassant-hexo](https://github.com/tufu9441/maupassant-hexo) 主题
+
 > 博客源代码在main分支，gh-pages分支是github page的静态资源，由TravisCI自动构建
 
 配置环境：
