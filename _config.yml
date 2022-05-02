@@ -14,12 +14,12 @@ timezone: Asia/Shanghai
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://howoii.github.io/
-permalink: :year/:month/:urlname/
+permalink: :year/:month/:urlname.html
 permalink_defaults:
   urlname: index
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -106,3 +106,7 @@ deploy:
   type: git
   repository: git@github.com:howoii/howoii.github.io.git
   branch: gh-pages
+
+# Math jax
+## Format: $$...$$ for block / $..$ for inline
+mathjax: true 
